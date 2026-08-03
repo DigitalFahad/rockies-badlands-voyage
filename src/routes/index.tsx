@@ -1,24 +1,59 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/site/Hero";
+import { TrustBar } from "@/components/site/TrustBar";
+import { FeaturedExperiences } from "@/components/site/FeaturedExperiences";
+import { DestinationsGrid } from "@/components/site/DestinationsGrid";
+import { WhyChooseUs } from "@/components/site/WhyChooseUs";
+import { StorySection } from "@/components/site/StorySection";
+import { GalleryMasonry } from "@/components/site/GalleryMasonry";
+import { ReviewsSection } from "@/components/site/ReviewsSection";
+import { VideoSection } from "@/components/site/VideoSection";
+import { PrivateToursTeaser } from "@/components/site/PrivateToursTeaser";
+import { BookingProcess } from "@/components/site/BookingProcess";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
+import { ExtrasSection } from "@/components/site/ExtrasSection";
+import { FaqSection } from "@/components/site/FaqSection";
+import { JournalTeaser } from "@/components/site/JournalTeaser";
+import { FinalCta } from "@/components/site/FinalCta";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Rockies & Badland Explorers | Small-Group Canadian Rockies Tours";
+const description =
+  "Award-winning small-group and private tours of Banff, Lake Louise, Jasper, the Icefields Parkway and the Alberta Badlands, led by local expert guides.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <TrustBar />
+      <FeaturedExperiences />
+      <DestinationsGrid />
+      <WhyChooseUs />
+      <StorySection />
+      <VideoSection />
+      <GalleryMasonry />
+      <ReviewsSection />
+      <PrivateToursTeaser />
+      <BookingProcess />
+      <BeforeAfter />
+      <ExtrasSection />
+      <FaqSection />
+      <JournalTeaser />
+      <FinalCta />
+    </>
   );
 }
