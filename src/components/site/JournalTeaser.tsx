@@ -5,8 +5,9 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 export function JournalTeaser() {
-  const featured = blogPosts.find((p) => p.featured) ?? blogPosts[0];
+  const featured = blogPosts.find((p) => p.featured) ?? blogPosts[0]!;
   const rest = blogPosts.filter((p) => p.slug !== featured.slug).slice(0, 3);
+
 
   return (
     <section className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 lg:py-32">
