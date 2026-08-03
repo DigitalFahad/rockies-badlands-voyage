@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <section ref={ref} className="relative isolate min-h-dvh overflow-hidden">
       <motion.div
-        style={reduced ? undefined : { y, scale }}
+        {...(reduced ? {} : { style: { y, scale } })}
         className="absolute inset-0 will-change-transform"
       >
         <motion.img
@@ -39,16 +39,14 @@ export function Hero() {
           height={1088}
           fetchPriority="high"
           className="size-full object-cover"
-          animate={
-            reduced ? undefined : { x: pointer.x * -18, y: pointer.y * -12 }
-          }
+          {...(reduced ? {} : { animate: { x: pointer.x * -18, y: pointer.y * -12 } })}
           transition={{ type: "spring", stiffness: 40, damping: 20, mass: 0.6 }}
         />
       </motion.div>
       <div className="image-scrim absolute inset-0" />
 
       <motion.div
-        style={reduced ? undefined : { opacity: fade }}
+        {...(reduced ? {} : { style: { opacity: fade } })}
         className="relative mx-auto flex min-h-dvh max-w-[1400px] flex-col justify-end px-5 pt-32 pb-10 sm:px-8 lg:pb-14"
       >
         <motion.div
@@ -128,7 +126,7 @@ export function Hero() {
 
       <motion.div
         aria-hidden="true"
-        animate={reduced ? undefined : { y: [0, 9, 0] }}
+        {...(reduced ? {} : { animate: { y: [0, 9, 0] } })}
         transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 text-white/70 lg:block"
       >
