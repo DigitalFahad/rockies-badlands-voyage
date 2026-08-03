@@ -27,6 +27,7 @@ export function FinalCta() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <Link
               to="/book"
+            search={{}}
               className="min-h-11 rounded-full bg-sunrise px-8 py-4 font-bold text-sunrise-foreground shadow-glow transition-transform hover:-translate-y-0.5"
             >
               Book Now

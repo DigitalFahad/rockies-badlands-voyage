@@ -78,6 +78,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
               to="/book"
+            search={{}}
               className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-sunrise px-7 py-4 font-bold tracking-tight text-sunrise-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
               Book Your Adventure

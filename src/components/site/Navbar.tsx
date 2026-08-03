@@ -81,6 +81,7 @@ export function Navbar() {
           </a>
           <Link
             to="/book"
+            search={{}}
             className={`hidden rounded-full px-5 py-2.5 text-[13px] font-bold tracking-tight transition-all duration-300 hover:-translate-y-0.5 sm:inline-flex ${
               onImage
                 ? "bg-white text-primary shadow-lift hover:bg-white"
@@ -127,6 +128,7 @@ export function Navbar() {
               </ul>
               <Link
                 to="/book"
+            search={{}}
                 className="mt-5 flex min-h-11 items-center justify-center rounded-full bg-sunrise px-5 font-bold text-sunrise-foreground shadow-glow"
               >
                 Book Your Adventure
