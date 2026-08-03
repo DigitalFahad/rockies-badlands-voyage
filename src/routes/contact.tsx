@@ -163,7 +163,7 @@ function ContactPage() {
                     Full name
                   </label>
                   <input id="name" name="name" className={field} placeholder="Jane Fraser" />
-                  {errors.name && <p className="mt-2 text-xs text-destructive">{errors.name}</p>}
+                  {errors['name'] && <p className="mt-2 text-xs text-destructive">{errors['name']}</p>}
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
@@ -177,8 +177,8 @@ function ContactPage() {
                       className={field}
                       placeholder="you@example.com"
                     />
-                    {errors.email && (
-                      <p className="mt-2 text-xs text-destructive">{errors.email}</p>
+                    {errors['email'] && (
+                      <p className="mt-2 text-xs text-destructive">{errors['email']}</p>
                     )}
                   </div>
                   <div>
@@ -200,8 +200,8 @@ function ContactPage() {
                     className={field}
                     placeholder="We're in Banff from July 8–13 with two teenagers and would love a sunrise tour and a wildlife day…"
                   />
-                  {errors.message && (
-                    <p className="mt-2 text-xs text-destructive">{errors.message}</p>
+                  {errors['message'] && (
+                    <p className="mt-2 text-xs text-destructive">{errors['message']}</p>
                   )}
                 </div>
               </div>

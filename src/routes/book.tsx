@@ -12,7 +12,7 @@ const description =
 
 export const Route = createFileRoute("/book")({
   validateSearch: (search: Record<string, unknown>) => ({
-    tour: typeof search.tour === "string" ? search.tour : undefined,
+    tour: typeof search['tour'] === "string" ? search['tour'] : undefined,
   }),
   head: () => ({
     meta: [
@@ -63,7 +63,7 @@ function BookPage() {
     setErrors({});
     setConfirmation({
       ref: `RBE-${Math.floor(100000 + Math.random() * 899999)}`,
-      date: String(result.data.date),
+      date: String(result.data['date']),
     });
     toast.success("Reservation held — confirmation sent by email.");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -174,7 +174,7 @@ function BookPage() {
                     Departure date
                   </label>
                   <input id="date" name="date" type="date" className={field} />
-                  {errors.date && <p className="mt-2 text-xs text-destructive">{errors.date}</p>}
+                  {errors['date'] && <p className="mt-2 text-xs text-destructive">{errors['date']}</p>}
                 </div>
                 <div>
                   <label htmlFor="guests" className="text-sm font-semibold text-foreground">
@@ -190,8 +190,8 @@ function BookPage() {
                     onChange={(e) => setGuests(Number(e.target.value))}
                     className={field}
                   />
-                  {errors.guests && (
-                    <p className="mt-2 text-xs text-destructive">{errors.guests}</p>
+                  {errors['guests'] && (
+                    <p className="mt-2 text-xs text-destructive">{errors['guests']}</p>
                   )}
                 </div>
               </div>
@@ -207,7 +207,7 @@ function BookPage() {
                     </option>
                   ))}
                 </select>
-                {errors.pickup && <p className="mt-2 text-xs text-destructive">{errors.pickup}</p>}
+                {errors['pickup'] && <p className="mt-2 text-xs text-destructive">{errors['pickup']}</p>}
               </div>
             </fieldset>
 
@@ -219,7 +219,7 @@ function BookPage() {
                     Full name
                   </label>
                   <input id="name" name="name" className={field} placeholder="Jane Fraser" />
-                  {errors.name && <p className="mt-2 text-xs text-destructive">{errors.name}</p>}
+                  {errors['name'] && <p className="mt-2 text-xs text-destructive">{errors['name']}</p>}
                 </div>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
@@ -233,8 +233,8 @@ function BookPage() {
                       className={field}
                       placeholder="you@example.com"
                     />
-                    {errors.email && (
-                      <p className="mt-2 text-xs text-destructive">{errors.email}</p>
+                    {errors['email'] && (
+                      <p className="mt-2 text-xs text-destructive">{errors['email']}</p>
                     )}
                   </div>
                   <div>
@@ -247,8 +247,8 @@ function BookPage() {
                       className={field}
                       placeholder="+1 403 000 0000"
                     />
-                    {errors.phone && (
-                      <p className="mt-2 text-xs text-destructive">{errors.phone}</p>
+                    {errors['phone'] && (
+                      <p className="mt-2 text-xs text-destructive">{errors['phone']}</p>
                     )}
                   </div>
                 </div>
