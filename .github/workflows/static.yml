@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './.output/public/rockies-badlands-voyage'
+          path: './.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
