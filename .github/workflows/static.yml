@@ -32,8 +32,10 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build project
+      - name: Build TanStack Start project
         run: bun run build
+        env:
+          NITRO_PRESET: github-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
